@@ -52,11 +52,12 @@ $sysUsers.value | ft
 
 $createUserBody = @{
     'UserID' = 'testIDM';
-    'Alias' = 'testIDM@eles.si';
+    'Alias' = 'tamara.slapar@eles.onmicrosoft.com';
     'UserName' = 'Testing IDM';
     "NetworkDomain" = "https://sts.windows.net/";
     'UserInfo_language' = 'sl';
     'Helplanguage' = 'en-US';
+    "AccountType"= "ClaimsUser";
 }
 $createdUser = Invoke-RestMethod -Method Post "$d365foPrefix/SystemUsers" -Body (ConvertTo-Json $createUserBody) -ContentType application/json @restParams
 
